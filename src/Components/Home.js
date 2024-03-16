@@ -1,6 +1,10 @@
 import React from "react";
+import { useContext } from "react";
+import Notes from "./Notes";
+
 
 const Home = () => {
+  
   return (
     <div>
       <div className="container my-5">
@@ -36,10 +40,9 @@ const Home = () => {
         </form>
       </div>
       <hr />
+      <Notes/>
 
-      <div className="container my-5">
-        <h2>Your Notes</h2>
-      </div>
+      
     </div>
   );
 };
