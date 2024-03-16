@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+
 import Notes from "./Notes";
 
 
@@ -12,7 +12,7 @@ const Home = () => {
 
         <form>
           <div className="mb-3">
-            <label for="exampleInputEmail1" className="form-label">
+            <label htmlFor="exampleInputEmail1" className="form-label">
               Title:
             </label>
             <input
@@ -23,7 +23,7 @@ const Home = () => {
             />
           </div>
           <div className="mb-3">
-            <label for="exampleInputPassword1" className="form-label">
+            <label htmlFor="exampleInputPassword1" className="form-label">
               {" "}
               Note :
             </label>
