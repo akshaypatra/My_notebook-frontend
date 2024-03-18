@@ -12,7 +12,7 @@ function App() {
       <NoteState>
         <BrowserRouter>
           <Navbar />
-          <Alert message="Deleted the note"/>
+          {/* <Alert message="Deleted the note"/> */}
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />

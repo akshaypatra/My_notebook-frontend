@@ -34,6 +34,7 @@ const NoteState = (props) => {
   //Add a note
   const addNote = async(title, description, tag) => {
     // API call
+     // eslint-disable-next-line
     const response = await fetch(`${host}/api/notes/addnote`, {
       method: "POST",
 
@@ -63,6 +64,7 @@ const NoteState = (props) => {
   //delete a note
   const deleteNote =async (id) => {
     //TODO:API call
+     // eslint-disable-next-line
     const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
       method: "DELETE",
 
@@ -87,7 +89,7 @@ const NoteState = (props) => {
     //APi call
 
     const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
-      method: "POST",
+      method: "PUT",
 
       headers: {
         "Content-Type": "application/json",
@@ -97,7 +99,9 @@ const NoteState = (props) => {
 
       body: JSON.stringify({title,description,tag})
     });
+     // eslint-disable-next-line
     const json = response.json();
+    
 
     //logic to edit in client
     for (let index = 0; index < notes.length; index++) {
