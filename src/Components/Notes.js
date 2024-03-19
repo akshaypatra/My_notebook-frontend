@@ -24,7 +24,7 @@ const Notes = () => {
 
  
   const handleClick=(e)=>{
-    console.log('Updating the note .....',note);
+    //console.log('Updating the note .....',note);
     
 
     editNote(note.id,note.etitle,note.edescription,note.etag)
@@ -79,6 +79,7 @@ const Notes = () => {
                     type="text"
                     className="form-control"
                     id="etitle"
+                    
                     name="etitle"
                     value={note.etitle}
                     aria-describedby="emailHelp"
@@ -126,7 +127,7 @@ const Notes = () => {
               >
                 Close
               </button>
-              <button type="button" className="btn btn-primary" onClick={handleClick}>
+              <button type="button" className="btn btn-primary" onClick={handleClick} disabled={note.etitle.length<1 || note.edescription.length<3}>
                 Update Note
               </button>
             </div>
@@ -136,6 +137,9 @@ const Notes = () => {
       <hr />
       <div className="row my-3">
         <h2>Your Notes</h2>
+        <div className="container mx-2 my-3">
+        {notes.length===0 && 'No Notes to display'}
+        </div>
         {notes.map((note) => {
           return (
             <NoteItem key={note._id} note={note} updateNote={updateNote} />

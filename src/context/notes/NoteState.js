@@ -48,7 +48,7 @@ const NoteState = (props) => {
     });
     
 
-    console.log("adding a new note");
+    // console.log("adding a new note");
     const note = {
       _id: "65e9f6093a1e4720ba33aa78",
       user: "65e9809e30d97fb4a432fb52",
@@ -77,7 +77,7 @@ const NoteState = (props) => {
 
 
 
-    console.log("deleteing the note with id" + id);
+    //console.log("deleteing the note with id" + id);
     const newNotes = notes.filter((note) => {
       return note._id !== id;
     });
