@@ -4,6 +4,8 @@ import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import About from "./Components/About";
 import NoteState from "./context/notes/NoteState";
+import Login from "./Components/Login";
+import Signup from "./Components/Signup";
 // import Alert from "./Components/Alert";
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
             </Routes>
           </div>
         </BrowserRouter>

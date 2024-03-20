@@ -38,8 +38,15 @@ const Navbar = () => {
                 About
               </Link>
               
+              
             </div>
+            
           </div>
+          <div className="d-flex">
+            <Link className="btn btn-primary mx-1" to="/signup" role="button">Sign Up</Link>
+            <Link className="btn btn-primary mx-1" to="/login" role="button">Log In</Link>
+          </div>
+         
         </div>
       </nav>
     
