@@ -3,7 +3,7 @@ import NoteContext from "../context/notes/NoteContext";
 import NoteItem from "./NoteItem";
 import AddNote from "./AddNote";
 
-const Notes = () => {
+const Notes = (props) => {
   const context = useContext(NoteContext);
   const { notes, getNotes,editNote } = context;
   const [note, setNote] = useState({id:'',etitle:"",edescription:"",etag:""})
@@ -12,10 +12,12 @@ const Notes = () => {
   useEffect(() => {
     getNotes();
   }, [getNotes]);
+
+
   const updateNote = (currentNote) => {
     ref.current.click();
     setNote({id:currentNote._id,etitle:currentNote.title,edescription:currentNote.description,etag:currentNote.tag})
-
+    
   };
 
   const ref = useRef(null);
@@ -29,6 +31,7 @@ const Notes = () => {
 
     editNote(note.id,note.etitle,note.edescription,note.etag)
     refClose.current.click();
+    props.showAlert("Updated succesfully","success");
 }
   const onChange=(e)=>{
     setNote({...note,[e.target.name]:e.target.value})
@@ -36,7 +39,7 @@ const Notes = () => {
 
   return (
     <>
-      <AddNote />
+      <AddNote showAlert={props.showAlert} />
 
       {/* Bootstrap modal */}
       <button
@@ -142,7 +145,7 @@ const Notes = () => {
         </div>
         {notes.map((note) => {
           return (
-            <NoteItem key={note._id} note={note} updateNote={updateNote} />
+            <NoteItem key={note._id} note={note} updateNote={updateNote} showAlert={props.showAlert} />
           );
         })}
       </div>
