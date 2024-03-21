@@ -28,8 +28,8 @@ const Signup = (props) => {
             //save the auth token and redirect
             
             localStorage.setItem('token',json.authToken);
+            props.showAlert("Account created successfully ","success");
             history("/");
-            props.showAlert("Account created successfully ","success")
             
 
         }else{
@@ -43,7 +43,7 @@ const Signup = (props) => {
     }
   return (
     <div className='container'>
-        <h1 style={{textAlign:"start",marginTop:"4vh"}}>Sign Up</h1>
+        <h1 style={{textAlign:"start",marginTop:"4vh"}}>Sign Up to use MyNotebook</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3 my-5">
         <label htmlFor="name" className="form-label">
